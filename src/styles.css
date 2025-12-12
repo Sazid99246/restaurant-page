@@ -1,0 +1,170 @@
+:root {
+    --color-primary: #ccdeff;
+    --color-secondary: #df2f2a;
+    --color-secondary-dark: hsl(2, 74%, 42%);
+    --color-text-black: #000;
+    --color-text-light: #fff;
+
+    --font-family-base: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-size-base: 1rem;
+    --font-size-heading1: 2.5rem;
+    --font-size-heading2: 2.25rem;
+    --font-size-heading3: 2.00rem;
+    --font-size-heading4: 1.75rem;
+    --font-size-heading5: 1.50rem;
+    --font-size-heading6: 1.25rem;
+    --font-size-display-heading: 3.5rem;
+    --font-weight-bold: 600;
+
+    --spacing-unit: 1rem;
+    --spacing-small: calc(var(--spacing-unit) * 0.5);
+    --spacing-base: var(--spacing-unit);
+    --spacing-large: calc(var(--spacing-unit) * 3);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: var(--font-family-base);
+}
+
+header {
+    border-bottom: 1px solid var(--color-text-black);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-primary);
+}
+
+nav>* {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-base);
+    border: none;
+    background-color: transparent;
+    padding: var(--spacing-small) var(--spacing-large);
+    outline: none;
+}
+
+nav>*:hover,
+nav>*:focus,
+.active-page {
+    background-color: var(--color-text-black);
+    color: var(--color-text-light);
+}
+
+#content {
+    min-height: calc(100vh);
+    background: no-repeat url('./food-background.jpg') top/cover fixed;
+    display: grid;
+    place-content: center;
+}
+
+#content .text {
+    text-align: center;
+}
+
+#content .text>* {
+    margin-bottom: var(--spacing-small);
+}
+
+#content .headline {
+    font-size: var(--font-size-display-heading);
+    white-space: preserve-breaks wrap;
+}
+
+#content button.order {
+    font-weight: var(--font-weight-bold);
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    width: 80%;
+    padding: var(--spacing-base) 0;
+    font-size: var(--font-size-base);
+}
+
+#content button.order:hover,
+#content button.order:focus {
+    outline-offset: 3px;
+    outline: 3px solid var(--color-secondary);
+}
+
+.menu,
+.contact {
+    width: 80ch;
+    display: grid;
+    gap: var(--spacing-large);
+    padding: var(--spacing-large);
+    text-align: center;
+    background-color: var(--color-primary);
+    margin: var(--spacing-large);
+    border: 1px solid var(--color-text-black);
+    border-radius: 2rem;
+}
+
+.menu h1,
+.contact h1 {
+    color: var(--color-text-light);
+    font-size: var(--font-size-display-heading);
+    background-color: var(--color-secondary-dark);
+    border-radius: 0.75rem;
+}
+
+.menu h2,
+.contact h2 {
+    border-bottom: 1px dashed var(--color-text-black);
+    color: var(--color-secondary);
+    font-size: var(--font-size-heading2);
+}
+
+.menu .item {
+    margin-top: var(--spacing-large);
+    text-align: left;
+    display: grid;
+    gap: var(--spacing-small);
+}
+
+.menu .item:first-of-type {
+    margin-top: var(--spacing-base);
+}
+
+.menu h3 {
+    font-size: var(--font-size-heading3);
+}
+
+.menu p,
+.contact p {
+    font-size: var(--font-size-heading6);
+    white-space: preserve-breaks wrap;
+}
+
+.menu .price {
+    font-weight: var(--font-weight-bold);
+}
+
+.contact>* {
+    display: grid;
+    gap: var(--spacing-base);
+}
+
+.contact .email a {
+    color: var(--color-text-black);
+}
+
+.contact .email p::after {
+    content: '↗';
+}
+
+.contact .email a:hover {
+    text-decoration: none;
+}
